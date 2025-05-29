@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.Master.cs" Inherits="Vistas.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>¨TP Nro 8 Programacion 3</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <h1>TP 8 Grupo 17</h1>
+        <nav>
+            <table border="1">
+                <td style="width: 200px; height: 20px; background-color: aquamarine; border-radius: 10px; text-align: center;">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar sucursal</asp:HyperLink>
+                </td>
+                <td style="width: 200px; height: 20px; background-color: aquamarine; border-radius: 10px; text-align: center;">
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de sucursales</asp:HyperLink>
+                </td >
+                <td style="width: 200px; height: 20px; background-color: aquamarine; border-radius: 10px; text-align: center;">
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar sucursal</asp:HyperLink>
+                </td>
+             </table>
+             </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <div>
+
+        </div>
+          </asp:ContentPlaceHolder>
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
