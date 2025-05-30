@@ -11,7 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>TP 8 Grupo 17</h1>
+        <!--barra de navegacion-->
         <nav>
             <table border="1">
                 <td style="width: 200px; height: 20px; background-color: aquamarine; border-radius: 10px; text-align: center;">
@@ -25,6 +25,9 @@
                 </td>
              </table>
              </nav>
+
+            <!--Titulo-->
+            <h1>TP 8 Grupo 17</h1>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         <div>

@@ -3,10 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div>
-            <asp:GridView runat="server" ID="gvSucursales" >
+    <!--Titulo de pagina-->
+    <h1>Listado de Sucursales</h1>
 
-            </asp:GridView>
-        </div>
+    <!--Gridview-->
+    <div>
+        <asp:GridView runat="server" ID="gvSucursales">
+        </asp:GridView>
+    </div>
 </asp:Content>
 
