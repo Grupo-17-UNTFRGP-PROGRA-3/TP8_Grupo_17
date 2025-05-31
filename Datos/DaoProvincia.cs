@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public  class DaoProvincia
+    public class DaoProvincia
     {
         AccesoDatos accesoDatos = new AccesoDatos();
+
         public DataTable ObtenerProvincias()
         {
-            string consultaSQL = "Select * FROM Provincia";
+            string consultaSQL = "Select DescripcionProvincia FROM Provincia";
             return accesoDatos.ObtenerTablas(consultaSQL, "Provincias");
         }
-
     }
 }
