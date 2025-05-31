@@ -48,7 +48,7 @@
 
             <!--container boton-->
             <div>
-                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" />
+                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
             </div>
         </div>
     </div>

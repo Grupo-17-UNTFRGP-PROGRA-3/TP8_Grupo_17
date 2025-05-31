@@ -13,7 +13,7 @@ namespace Datos
 
         public DataTable ObtenerProvincias()
         {
-            string consultaSQL = "Select DescripcionProvincia FROM Provincia";
+            string consultaSQL = "Select DescripcionProvincia, Id_Provincia FROM Provincia";
             return accesoDatos.ObtenerTablas(consultaSQL, "Provincias");
         }
     }

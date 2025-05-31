@@ -11,29 +11,34 @@
         <asp:GridView runat="server" ID="gvSucursales" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:TemplateField HeaderText="Id Sucursal">
+                <asp:TemplateField HeaderText="Id">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_it_idSucursal" runat="server" Text='<%# Bind("Id_Sucursal") %>'></asp:Label>
+                        &nbsp;<asp:Label ID="lbl_it_idSucursal" runat="server" Text='<%# Bind("Id_Sucursal") %>'></asp:Label>
+                        &nbsp;
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Nombre">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_it_NombreSucursal" runat="server" Text='<%# Bind("NombreSucursal") %>'></asp:Label>
+                        &nbsp;<asp:Label ID="lbl_it_NombreSucursal" runat="server" Text='<%# Bind("NombreSucursal") %>'></asp:Label>
+                        &nbsp;
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Descripcion">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_it_Descripcion" runat="server" Text='<%# Bind("DescripcionSucursal") %>'></asp:Label>
+                        &nbsp;<asp:Label ID="lbl_it_Descripcion" runat="server" Text='<%# Bind("DescripcionSucursal") %>'></asp:Label>
+                        &nbsp;
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Provincia">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_it_Provincia" runat="server" Text='<%# Bind("DescripcionProvincia") %>'></asp:Label>
+                        &nbsp;<asp:Label ID="lbl_it_Provincia" runat="server" Text='<%# Bind("DescripcionProvincia") %>'></asp:Label>
+                        &nbsp;
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Direccion">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_it_Direccion" runat="server" Text='<%# Bind("DireccionSucursal") %>'></asp:Label>
+                        &nbsp;<asp:Label ID="lbl_it_Direccion" runat="server" Text='<%# Bind("DireccionSucursal") %>'></asp:Label>
+                        &nbsp;
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
