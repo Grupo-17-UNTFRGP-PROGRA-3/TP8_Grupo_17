@@ -28,15 +28,16 @@
         </div>
 
         <!--container textboxes-->
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div>
-                <asp:TextBox ID="txtNombreSucursal" runat="server"></asp:TextBox>
-            </div>
 
-            <div>
-                <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
-            </div>
-
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div>
+                    <asp:TextBox ID="txtNombreSucursal" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_NombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" ForeColor="#FF3300" ValidationGroup="G1">Debe ingresar un nombre de sucursal</asp:RequiredFieldValidator>
+                </div>
+                <div>
+                    <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_Descripcion" runat="server" ControlToValidate="txtDescripcion" ForeColor="#FF3300" ValidationGroup="G1">Debe ingresar una descripcion</asp:RequiredFieldValidator>
+                </div>
             <div>
                 <asp:DropDownList ID="ddlProvincia" runat="server">
                 </asp:DropDownList>
@@ -44,11 +45,14 @@
 
             <div>
                 <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfv_Direccion" runat="server" ControlToValidate="txtDireccion" ForeColor="#FF3300" ValidationGroup="G1">Debe ingresar una direccion</asp:RequiredFieldValidator>
             </div>
 
             <!--container boton-->
             <div>
-                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
+                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" ValidationGroup="G1" />
+                <br />
+                <br />
             </div>
         </div>
     </div>
