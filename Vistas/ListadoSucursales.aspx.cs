@@ -14,6 +14,8 @@ namespace Vistas
         NegocioSucursal negocioSucursal = new NegocioSucursal();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
             if (!IsPostBack)
             {
                 DataTable tablaSucursales = negocioSucursal.GetTabla();

@@ -6,6 +6,15 @@
     <!--Titulo de pagina-->
     <h1>Listado de Sucursales</h1>
 
+    <!--General-->
+    <div>
+
+        Ingrese Id sucursal:<asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
+        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+        <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Solo ingrese numeros positivos" ForeColor="Red" ValidationExpression="^[0-9]+$"></asp:RegularExpressionValidator>
+
+    </div>
     <!--Gridview-->
     <div>
         <asp:GridView runat="server" ID="gvSucursales" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
