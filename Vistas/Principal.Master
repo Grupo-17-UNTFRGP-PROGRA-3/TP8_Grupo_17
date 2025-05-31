@@ -14,18 +14,18 @@
         <!--barra de navegacion-->
         <nav>
             <table border="1">
-                <td style="width: 200px; height: 20px; background-color: aquamarine; border-radius: 10px; text-align: center;">
+                <td style="width: 200px; height: 20px; background-color:deepskyblue; border-radius: 10px; text-align: center; font-size: 18px; font-weight: bold;">
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar sucursal</asp:HyperLink>
                 </td>
-                <td style="width: 200px; height: 20px; background-color: aquamarine; border-radius: 10px; text-align: center;">
+                <td style="width: 200px; height: 20px; background-color: deepskyblue; border-radius: 10px; text-align: center;font-size: 18px; font-weight: bold;">
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de sucursales</asp:HyperLink>
                 </td >
-                <td style="width: 200px; height: 20px; background-color: aquamarine; border-radius: 10px; text-align: center;">
+                <td style="width: 200px; height: 20px; background-color: deepskyblue; border-radius: 10px; text-align: center;font-size: 18px; font-weight: bold;">
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar sucursal</asp:HyperLink>
                 </td>
              </table>
              </nav>
-
+        <!-- BackColor="#507CD1" Font-Bold="True" ForeColor="White" -->
             <!--Titulo-->
             <h1>TP 8 Grupo 17</h1>
         <div>

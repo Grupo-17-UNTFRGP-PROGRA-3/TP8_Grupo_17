@@ -8,7 +8,45 @@
 
     <!--Gridview-->
     <div>
-        <asp:GridView runat="server" ID="gvSucursales">
+        <asp:GridView runat="server" ID="gvSucursales" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:TemplateField HeaderText="Id Sucursal">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_idSucursal" runat="server" Text='<%# Bind("Id_Sucursal") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Nombre">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_NombreSucursal" runat="server" Text='<%# Bind("NombreSucursal") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Descripcion">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Descripcion" runat="server" Text='<%# Bind("DescripcionSucursal") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Provincia">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Provincia" runat="server" Text='<%# Bind("DescripcionProvincia") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Direccion">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Direccion" runat="server" Text='<%# Bind("DireccionSucursal") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+            <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
     </div>
 </asp:Content>

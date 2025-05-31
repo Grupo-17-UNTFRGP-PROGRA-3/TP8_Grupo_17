@@ -13,7 +13,7 @@ namespace Negocio
         public DataTable GetTabla()
         {
             DaoSucursal dao = new DaoSucursal();
-            return dao.ObtenerSucursales();
+            return dao.ObtenerSucursalesIJProvincias();
         }
     }
 }
