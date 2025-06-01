@@ -19,9 +19,9 @@ namespace Vistas
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             NegocioSucursal ns = new NegocioSucursal();
+
             if (ns.EliminarSucursal(txt_IdSucursal.Text))
             {
-                txt_IdSucursal.Text = string.Empty;
                 lbl_Mensaje.ForeColor = Color.Red;
                 lbl_Mensaje.Text = "La sucursal se ha eliminado con éxito";
             }
@@ -31,6 +31,7 @@ namespace Vistas
                 lbl_Mensaje.Text = "No se encontró una sucursal con el ID ingresado";
             }
 
+            txt_IdSucursal.Text = string.Empty;
         }
     }
 }
