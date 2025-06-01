@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,8 +22,15 @@ namespace Vistas
             if (ns.EliminarSucursal(txt_IdSucursal.Text))
             {
                 txt_IdSucursal.Text = string.Empty;
-                lbl_Mensaje.Text = "Sucursal eliminada!!";
+                lbl_Mensaje.ForeColor = Color.Red;
+                lbl_Mensaje.Text = "La sucursal se ha eliminado con éxito";
             }
+            else
+            {
+                lbl_Mensaje.ForeColor = Color.Black;
+                lbl_Mensaje.Text = "No se encontró una sucursal con el ID ingresado";
+            }
+
         }
     }
 }

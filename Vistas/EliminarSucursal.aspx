@@ -9,8 +9,8 @@
 
         Ingresar Id sucursal:<asp:TextBox ID="txt_IdSucursal" runat="server" ValidationGroup="G2"></asp:TextBox>
         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" ValidationGroup="G2" />
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_IdSucursal" ErrorMessage="Debe ingresar un número" ForeColor="Red" ValidationGroup="G2"></asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_IdSucursal" ErrorMessage="Solo ingrese números" ForeColor="Red" ValidationExpression="^[0-9]+$" ValidationGroup="G2"></asp:RegularExpressionValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_IdSucursal" ErrorMessage="Debe ingresar un número" ForeColor="Red" ValidationGroup="G2" Display="Dynamic"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_IdSucursal" ErrorMessage="Solo ingrese números" ForeColor="Red" ValidationExpression="^[0-9]+$" ValidationGroup="G2" Display="Dynamic"></asp:RegularExpressionValidator>
 
         <br />
         <asp:Label ID="lbl_Mensaje" runat="server"></asp:Label>
