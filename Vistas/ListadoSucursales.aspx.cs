@@ -23,5 +23,15 @@ namespace Vistas
                 gvSucursales.DataBind();
             }
         }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtIdSucursal.Text))
+                return;
+
+            DataTable tablaSucursalesId = negocioSucursal.GetTablaId(Convert.ToInt32(txtIdSucursal.Text));
+            gvSucursales.DataSource = tablaSucursalesId;
+            gvSucursales.DataBind();
+        }
     }
 }

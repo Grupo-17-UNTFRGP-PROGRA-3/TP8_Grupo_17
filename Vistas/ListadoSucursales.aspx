@@ -10,7 +10,7 @@
     <div>
 
         Ingrese Id sucursal:<asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
-        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
         <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" />
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Solo ingrese numeros positivos" ForeColor="Red" ValidationExpression="^[0-9]+$"></asp:RegularExpressionValidator>
 
