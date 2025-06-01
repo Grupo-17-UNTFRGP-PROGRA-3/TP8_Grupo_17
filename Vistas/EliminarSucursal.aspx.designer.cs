@@ -15,13 +15,13 @@ namespace Vistas
     {
 
         /// <summary>
-        /// Control txtIdSucursal.
+        /// Control txt_IdSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdSucursal;
+        protected global::System.Web.UI.WebControls.TextBox txt_IdSucursal;
 
         /// <summary>
         /// Control btnEliminar.
@@ -49,5 +49,14 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
+        /// Control lbl_Mensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Mensaje;
     }
 }

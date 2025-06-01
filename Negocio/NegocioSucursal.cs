@@ -41,5 +41,13 @@ namespace Negocio
                 return false;
             }
         }
+
+        public bool EliminarSucursal(string id_Sucursal)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            bool resultado = dao.EliminarSucursal(id_Sucursal);
+            if (resultado) { return true; }
+            else { return false; }
+        }
     }
 }
