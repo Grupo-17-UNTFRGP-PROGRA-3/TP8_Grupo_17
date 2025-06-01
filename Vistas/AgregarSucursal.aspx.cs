@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -23,6 +24,7 @@ namespace Vistas
                 ddlProvincia.DataValueField = "Id_Provincia";
                 ddlProvincia.DataSource = tablaProvincias;
                 ddlProvincia.DataBind();
+                ddlProvincia.Items.Insert(0, new ListItem("--Seleccionar--", ""));
             }
         }
 
@@ -30,7 +32,15 @@ namespace Vistas
         {
             NegocioSucursal negocioSucursal = new NegocioSucursal();
 
-            negocioSucursal.AgregarSucursal(txtNombreSucursal.Text, txtDescripcion.Text, Convert.ToInt32(ddlProvincia.SelectedValue), txtDireccion.Text);
+             if(negocioSucursal.AgregarSucursal(txtNombreSucursal.Text, txtDescripcion.Text, Convert.ToInt32(ddlProvincia.SelectedValue), txtDireccion.Text))
+            {
+                lblMensaje.Text = "La sucursal se ha agregado con éxito";
+                lblMensaje.ForeColor = Color.Green;
+                txtNombreSucursal.Text = "";
+                txtDescripcion.Text = "";
+                ddlProvincia.SelectedIndex = 0;
+                txtDireccion.Text = "";
+            }
         }
     }
 }

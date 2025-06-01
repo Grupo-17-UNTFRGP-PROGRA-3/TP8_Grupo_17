@@ -41,6 +41,7 @@
             <div>
                 <asp:DropDownList ID="ddlProvincia" runat="server">
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="rfv_Provincia" runat="server" ControlToValidate="ddlProvincia" Display="Dynamic" ErrorMessage="Debe seleccionar una provincia" ForeColor="#FF3300" ValidationGroup="G1"></asp:RequiredFieldValidator>
             </div>
 
             <div>
@@ -52,6 +53,7 @@
             <div>
                 <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" ValidationGroup="G1" />
                 <br />
+                <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                 <br />
             </div>
         </div>
