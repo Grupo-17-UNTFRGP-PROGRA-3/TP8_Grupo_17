@@ -32,6 +32,15 @@ namespace Vistas
             DataTable tablaSucursalesId = negocioSucursal.GetTablaId(Convert.ToInt32(txtIdSucursal.Text));
             gvSucursales.DataSource = tablaSucursalesId;
             gvSucursales.DataBind();
+            txtIdSucursal.Text = String.Empty;
+        }
+
+        protected void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            txtIdSucursal.Text = String.Empty;
+            DataTable tablaSucursales = negocioSucursal.GetTabla();
+            gvSucursales.DataSource = tablaSucursales;
+            gvSucursales.DataBind();
         }
     }
 }

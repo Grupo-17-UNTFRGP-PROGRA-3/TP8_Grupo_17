@@ -51,7 +51,7 @@
 
             <!--container boton-->
             <div>
-                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" ValidationGroup="G1" />
+                <asp:Button ID="btnAceptar" runat="server" Text="Guardar" OnClick="btnAceptar_Click" ValidationGroup="G1" />
                 <br />
                 <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                 <br />

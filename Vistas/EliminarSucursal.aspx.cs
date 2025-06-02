@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Web;
@@ -11,9 +12,16 @@ namespace Vistas
 {
     public partial class EliminarSucursal : System.Web.UI.Page
     {
+        NegocioSucursal negocioSucursal = new NegocioSucursal();
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            if (!IsPostBack)
+            {
+                DataTable tablaSucursales = negocioSucursal.GetTabla();
+                gvSucursales.DataSource = tablaSucursales;
+                gvSucursales.DataBind();
+            }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -30,7 +38,9 @@ namespace Vistas
                 lbl_Mensaje.ForeColor = Color.Black;
                 lbl_Mensaje.Text = "No se encontró una sucursal con el ID ingresado";
             }
-
+            DataTable tablaSucursales = negocioSucursal.GetTabla();
+            gvSucursales.DataSource = tablaSucursales;
+            gvSucursales.DataBind();
             txt_IdSucursal.Text = string.Empty;
         }
     }
