@@ -24,6 +24,18 @@ namespace Vistas
             }
         }
 
+        protected void btnFiltrarUnicoId_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtIdSucursal3.Text);
+
+            DataTable tablaSucursalesIdUnico = negocioSucursal.GetTablaId(id);
+            gvSucursales.DataSource = tablaSucursalesIdUnico;
+            gvSucursales.DataBind();
+            txtIdSucursal.Text = String.Empty;
+            txtIdSucursal2.Text = String.Empty;
+            txtIdSucursal3.Text = String.Empty;
+        }
+
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtIdSucursal.Text) && string.IsNullOrEmpty(txtIdSucursal2.Text))
@@ -36,6 +48,7 @@ namespace Vistas
             gvSucursales.DataBind();
             txtIdSucursal.Text = String.Empty;
             txtIdSucursal2.Text = String.Empty;
+            txtIdSucursal3.Text = string.Empty;
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)

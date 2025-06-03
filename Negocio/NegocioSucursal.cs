@@ -17,6 +17,12 @@ namespace Negocio
             return dao.ObtenerSucursalesIJProvincias();
         }
 
+        public DataTable GetTablaId(int id)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.ObtenerSucursalesIJProvinciasID(id);
+        }
+
         public DataTable GetTablaId(int id, int id2)
         {
             DaoSucursal dao = new DaoSucursal();

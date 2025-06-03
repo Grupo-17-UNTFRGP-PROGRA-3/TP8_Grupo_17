@@ -8,15 +8,32 @@
 
     <!--General-->
     <div>
+        <!--Filtro por ID unico-->
+        <div>
+            Ingrese Id sucursal:
+            <asp:TextBox ID="txtIdSucursal3" runat="server"></asp:TextBox>
+            <asp:Button ID="btnFiltrarUnicoId" runat="server" OnClick="btnFiltrarUnicoId_Click" Text="Filtrar" />
+        </div>
+        
+        <!--Filtro por ID rango-->
+        <div>
+            Ingrese rango de Id sucursal:
+            <asp:TextBox ID="txtIdSucursal" runat="server" TextMode="Number"></asp:TextBox>
+            <asp:TextBox ID="txtIdSucursal2" runat="server" TextMode="Number"></asp:TextBox>
+            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" ValidationGroup="G3" />
+            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" OnClick="btnMostrarTodos_Click" />
+        </div>
 
-        Ingrese rango de Id sucursal:<asp:TextBox ID="txtIdSucursal" runat="server" TextMode="Number"></asp:TextBox>
-        <asp:TextBox ID="txtIdSucursal2" runat="server" TextMode="Number"></asp:TextBox>
-        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" ValidationGroup="G3" />
-        <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" OnClick="btnMostrarTodos_Click" />
-        <br />
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtIdSucursal" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G3">Debe ingresar datos en el primer campo</asp:RequiredFieldValidator>
-        <br />
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtIdSucursal2" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G3">Debe ingresar datos en segundo campo</asp:RequiredFieldValidator>
+        <!--Validators-->
+        <div>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIdSucursal3" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300">Debe ingresar datos en el campo</asp:RequiredFieldValidator>
+            <br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtIdSucursal" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G3">Debe ingresar datos en el primer campo</asp:RequiredFieldValidator>
+            <br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtIdSucursal2" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G3">Debe ingresar datos en segundo campo</asp:RequiredFieldValidator>
+            <br />
+
+        </div>
 
         <br />
 

@@ -25,6 +25,13 @@ namespace Datos
             return accesoDatos.ObtenerTablas(consultaSQL, "Sucursales");
         }
 
+        public DataTable ObtenerSucursalesIJProvinciasID(int id)
+        {
+            string consultaSQL = "SELECT * FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal" +
+                " = Id_Provincia WHERE Id_Sucursal = " + id.ToString();
+            return accesoDatos.ObtenerTablas(consultaSQL, "Sucursales");
+        }
+
         public DataTable ObtenerSucursalesIJProvinciasID(int id, int id2)
         {
             string consultaSQL = "SELECT * FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal" +
