@@ -17,10 +17,10 @@ namespace Negocio
             return dao.ObtenerSucursalesIJProvincias();
         }
 
-        public DataTable GetTablaId(int id)
+        public DataTable GetTablaId(int id, int id2)
         {
             DaoSucursal dao = new DaoSucursal();
-            return dao.ObtenerSucursalesIJProvinciasID(id);
+            return dao.ObtenerSucursalesIJProvinciasID(id, id2);
         }
 
         public bool AgregarSucursal(string nombre, string descripcion, int provincia, string direccion)

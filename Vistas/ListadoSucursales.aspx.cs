@@ -26,18 +26,22 @@ namespace Vistas
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtIdSucursal.Text))
+            if (string.IsNullOrEmpty(txtIdSucursal.Text) && string.IsNullOrEmpty(txtIdSucursal2.Text))
                 return;
-
-            DataTable tablaSucursalesId = negocioSucursal.GetTablaId(Convert.ToInt32(txtIdSucursal.Text));
+            int id = Convert.ToInt32(txtIdSucursal.Text);
+            int id2 = Convert.ToInt32(txtIdSucursal2.Text);
+            if (id > id2) { int aux = id; id = id2; id2 = aux; }
+            DataTable tablaSucursalesId = negocioSucursal.GetTablaId(id, id2);
             gvSucursales.DataSource = tablaSucursalesId;
             gvSucursales.DataBind();
             txtIdSucursal.Text = String.Empty;
+            txtIdSucursal2.Text = String.Empty;
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             txtIdSucursal.Text = String.Empty;
+            txtIdSucursal2.Text = String.Empty;
             DataTable tablaSucursales = negocioSucursal.GetTabla();
             gvSucursales.DataSource = tablaSucursales;
             gvSucursales.DataBind();

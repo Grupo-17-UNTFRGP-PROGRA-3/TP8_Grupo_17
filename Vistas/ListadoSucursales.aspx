@@ -9,15 +9,21 @@
     <!--General-->
     <div>
 
-        Ingrese Id sucursal:<asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
-        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+        Ingrese rango de Id sucursal:<asp:TextBox ID="txtIdSucursal" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:TextBox ID="txtIdSucursal2" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" ValidationGroup="G3" />
         <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" OnClick="btnMostrarTodos_Click" />
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Solo ingrese numeros positivos" ForeColor="Red" ValidationExpression="^[0-9]+$"></asp:RegularExpressionValidator>
+        <br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtIdSucursal" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G3">Debe ingresar datos en el primer campo</asp:RequiredFieldValidator>
+        <br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtIdSucursal2" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G3">Debe ingresar datos en segundo campo</asp:RequiredFieldValidator>
+
+        <br />
 
     </div>
     <!--Gridview-->
     <div>
-        <asp:GridView runat="server" ID="gvSucursales" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView runat="server" ID="gvSucursales" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="mensajeError" EmptyDataText="No se han encontrado coincidencias">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:TemplateField HeaderText="Id">
