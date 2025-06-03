@@ -26,22 +26,53 @@ namespace Vistas
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            NegocioSucursal ns = new NegocioSucursal();
+            lbl_Mensaje.Text = string.Empty;
+            lbtn_ConfirmarEliminar.Visible = true;
+            lbtn_ConfirmarEliminar.Enabled = true;
+            lbtn_ConfirmarEliminar0.Enabled = true;
+            lbtn_ConfirmarEliminar0.Visible = true;
+        }
 
-            if (ns.EliminarSucursal(txt_IdSucursal.Text))
+        protected void lbtn_ConfirmarEliminar_Click(object sender, EventArgs e)
+        {
+            try
             {
-                lbl_Mensaje.ForeColor = Color.Red;
-                lbl_Mensaje.Text = "La sucursal se ha eliminado con éxito";
+                NegocioSucursal ns = new NegocioSucursal();
+
+                if (ns.EliminarSucursal(txt_IdSucursal.Text))
+                {
+                    lbl_Mensaje.ForeColor = Color.Red;
+                    lbl_Mensaje.Text = "La sucursal se ha eliminado con éxito";
+                }
+                else
+                {
+                    lbl_Mensaje.ForeColor = Color.Black;
+                    lbl_Mensaje.Text = "No se encontró una sucursal con el ID ingresado";
+                }
+                DataTable tablaSucursales = negocioSucursal.GetTabla();
+                gvSucursales.DataSource = tablaSucursales;
+                gvSucursales.DataBind();
+                txt_IdSucursal.Text = string.Empty;
+                lbtn_ConfirmarEliminar.Enabled = false;
+                lbtn_ConfirmarEliminar.Visible = false;
+                lbtn_ConfirmarEliminar0.Enabled = false;
+                lbtn_ConfirmarEliminar0.Visible = false;
             }
-            else
+            catch 
             {
-                lbl_Mensaje.ForeColor = Color.Black;
-                lbl_Mensaje.Text = "No se encontró una sucursal con el ID ingresado";
+                lbl_Mensaje.Text= string.Empty;
+                return;
             }
-            DataTable tablaSucursales = negocioSucursal.GetTabla();
-            gvSucursales.DataSource = tablaSucursales;
-            gvSucursales.DataBind();
-            txt_IdSucursal.Text = string.Empty;
+        }
+
+        protected void lbtn_ConfirmarEliminar0_Click(object sender, EventArgs e)
+        {
+            txt_IdSucursal.Text = string.Empty ;
+            lbtn_ConfirmarEliminar.Enabled = false;
+            lbtn_ConfirmarEliminar.Visible = false;
+            lbtn_ConfirmarEliminar0.Enabled = false;
+            lbtn_ConfirmarEliminar0.Visible = false;
+            lbl_Mensaje.Text = string.Empty;
         }
     }
 }

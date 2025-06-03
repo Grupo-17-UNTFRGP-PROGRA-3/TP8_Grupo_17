@@ -51,6 +51,24 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
+        /// Control lbtn_ConfirmarEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_ConfirmarEliminar;
+
+        /// <summary>
+        /// Control lbtn_ConfirmarEliminar0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_ConfirmarEliminar0;
+
+        /// <summary>
         /// Control lbl_Mensaje.
         /// </summary>
         /// <remarks>

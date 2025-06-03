@@ -13,6 +13,10 @@
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_IdSucursal" ErrorMessage="Solo ingrese números" ForeColor="Red" ValidationExpression="^[0-9]+$" ValidationGroup="G2" Display="Dynamic"></asp:RegularExpressionValidator>
 
         <br />
+        <asp:LinkButton ID="lbtn_ConfirmarEliminar" runat="server" Enabled="False" ForeColor="#CC3300" OnClick="lbtn_ConfirmarEliminar_Click" Visible="False">Esta seguro que desea eliminar la sucursal? Presione AQUI para confirmar</asp:LinkButton>
+        &nbsp;<asp:LinkButton ID="lbtn_ConfirmarEliminar0" runat="server" Enabled="False" ForeColor="#CC3300" OnClick="lbtn_ConfirmarEliminar0_Click" Visible="False">o AQUI para cancelar</asp:LinkButton>
+
+        <br />
         <asp:Label ID="lbl_Mensaje" runat="server"></asp:Label>
 
         <br />
