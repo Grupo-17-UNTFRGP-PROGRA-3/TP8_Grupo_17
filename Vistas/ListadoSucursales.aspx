@@ -32,7 +32,6 @@
             <br />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtIdSucursal2" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G3">Debe ingresar datos en segundo campo</asp:RequiredFieldValidator>
             <br />
-
         </div>
 
         <br />

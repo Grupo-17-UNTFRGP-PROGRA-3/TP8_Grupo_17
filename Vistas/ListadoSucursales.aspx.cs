@@ -28,9 +28,13 @@ namespace Vistas
         {
             int id = Convert.ToInt32(txtIdSucursal3.Text);
 
-            DataTable tablaSucursalesIdUnico = negocioSucursal.GetTablaId(id);
-            gvSucursales.DataSource = tablaSucursalesIdUnico;
-            gvSucursales.DataBind();
+            if (id > 0)
+            {
+                DataTable tablaSucursalesIdUnico = negocioSucursal.GetTablaId(id);
+                gvSucursales.DataSource = tablaSucursalesIdUnico;
+                gvSucursales.DataBind();
+            }
+
             txtIdSucursal.Text = String.Empty;
             txtIdSucursal2.Text = String.Empty;
             txtIdSucursal3.Text = String.Empty;
@@ -38,17 +42,21 @@ namespace Vistas
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtIdSucursal.Text) && string.IsNullOrEmpty(txtIdSucursal2.Text))
-                return;
             int id = Convert.ToInt32(txtIdSucursal.Text);
             int id2 = Convert.ToInt32(txtIdSucursal2.Text);
-            if (id > id2) { int aux = id; id = id2; id2 = aux; }
-            DataTable tablaSucursalesId = negocioSucursal.GetTablaId(id, id2);
-            gvSucursales.DataSource = tablaSucursalesId;
-            gvSucursales.DataBind();
+
+            if ((id > 0) && (id2 > 0))
+            {
+                if (id > id2) { int aux = id; id = id2; id2 = aux; }
+
+                DataTable tablaSucursalesId = negocioSucursal.GetTablaId(id, id2);
+                gvSucursales.DataSource = tablaSucursalesId;
+                gvSucursales.DataBind();
+            }
+
             txtIdSucursal.Text = String.Empty;
             txtIdSucursal2.Text = String.Empty;
-            txtIdSucursal3.Text = string.Empty;
+            txtIdSucursal3.Text = String.Empty;
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
