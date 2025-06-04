@@ -51,7 +51,7 @@ namespace Datos
         }
         public bool EliminarSucursal(string id_Sucursal)
         {
-            string sqlCommand = "DELETE FROM Sucursal WHERE Id_Sucursal = "+id_Sucursal;
+            string sqlCommand = "DELETE FROM Sucursal WHERE Id_Sucursal = " + id_Sucursal;
             int filasAfectadas = accesoDatos.EjecutarConsulta(sqlCommand);
             if (filasAfectadas > 0) { return true; }
             else { return false; }

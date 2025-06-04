@@ -27,13 +27,18 @@ namespace Vistas
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             lbl_Mensaje.Text = string.Empty;
-            lbtn_ConfirmarEliminar.Visible = true;
-            lbtn_ConfirmarEliminar.Enabled = true;
-            lbtn_ConfirmarEliminar0.Enabled = true;
-            lbtn_ConfirmarEliminar0.Visible = true;
+
+            lblConfirmacionEliminacion.Visible = true;
+            lblConfirmacionEliminacion.Enabled = true;
+
+            btnAceptarEliminacion.Visible = true;
+            btnAceptarEliminacion.Enabled = true;
+
+            btnCancelaEliminacion.Visible = true;
+            btnCancelaEliminacion.Enabled = true;
         }
 
-        protected void lbtn_ConfirmarEliminar_Click(object sender, EventArgs e)
+        protected void btnAceptarEliminacion_Click(object sender, EventArgs e)
         {
             try
             {
@@ -47,32 +52,39 @@ namespace Vistas
                 else
                 {
                     lbl_Mensaje.ForeColor = Color.Black;
-                    lbl_Mensaje.Text = "No se encontró una sucursal con el ID ingresado";
+                    lbl_Mensaje.Text = "No se encontró una sucursal con el ID " + txt_IdSucursal.Text.ToString();
                 }
+
                 DataTable tablaSucursales = negocioSucursal.GetTabla();
                 gvSucursales.DataSource = tablaSucursales;
                 gvSucursales.DataBind();
+
                 txt_IdSucursal.Text = string.Empty;
-                lbtn_ConfirmarEliminar.Enabled = false;
-                lbtn_ConfirmarEliminar.Visible = false;
-                lbtn_ConfirmarEliminar0.Enabled = false;
-                lbtn_ConfirmarEliminar0.Visible = false;
+
+                lblConfirmacionEliminacion.Enabled = false;
+                lblConfirmacionEliminacion.Visible = false;
+
+                btnAceptarEliminacion.Visible = false;
+                btnAceptarEliminacion.Enabled = false;
+                btnCancelaEliminacion.Visible = false;
+                btnCancelaEliminacion.Enabled = false;
             }
-            catch 
+            catch
             {
-                lbl_Mensaje.Text= string.Empty;
+                lbl_Mensaje.Text = string.Empty;
                 return;
             }
         }
 
-        protected void lbtn_ConfirmarEliminar0_Click(object sender, EventArgs e)
+        protected void btnCancelaEliminacion_Click(object sender, EventArgs e)
         {
-            txt_IdSucursal.Text = string.Empty ;
-            lbtn_ConfirmarEliminar.Enabled = false;
-            lbtn_ConfirmarEliminar.Visible = false;
-            lbtn_ConfirmarEliminar0.Enabled = false;
-            lbtn_ConfirmarEliminar0.Visible = false;
-            lbl_Mensaje.Text = string.Empty;
+            lblConfirmacionEliminacion.Enabled = false;
+            lblConfirmacionEliminacion.Visible = false;
+
+            btnAceptarEliminacion.Visible = false;
+            btnAceptarEliminacion.Enabled = false;
+            btnCancelaEliminacion.Visible = false;
+            btnCancelaEliminacion.Enabled = false;
         }
     }
 }
