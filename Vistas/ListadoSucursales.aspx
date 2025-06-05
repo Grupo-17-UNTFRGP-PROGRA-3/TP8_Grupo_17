@@ -11,8 +11,8 @@
         <!--Filtro por ID unico-->
         <div>
             Ingrese Id sucursal:
-            <asp:TextBox ID="txtIdSucursal3" runat="server"></asp:TextBox>
-            <asp:Button ID="btnFiltrarUnicoId" runat="server" OnClick="btnFiltrarUnicoId_Click" Text="Filtrar" />
+            <asp:TextBox ID="txtIdSucursal3" runat="server" TextMode="Number"></asp:TextBox>
+            <asp:Button ID="btnFiltrarUnicoId" runat="server" OnClick="btnFiltrarUnicoId_Click" Text="Filtrar" ValidationGroup="G1" />
         </div>
         
         <!--Filtro por ID rango-->
@@ -26,7 +26,7 @@
 
         <!--Validators-->
         <div>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIdSucursal3" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300">Debe ingresar datos en el campo</asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIdSucursal3" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G1">Debe ingresar datos en el campo</asp:RequiredFieldValidator>
             <br />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtIdSucursal" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300" ValidationGroup="G3">Debe ingresar datos en el primer campo</asp:RequiredFieldValidator>
             <br />
