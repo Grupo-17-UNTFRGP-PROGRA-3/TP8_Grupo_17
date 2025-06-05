@@ -29,6 +29,12 @@ namespace Negocio
             return dao.ObtenerSucursalesIJProvinciasID(id, id2);
         }
 
+        public bool SucursalIdExiste(int id)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.SucursalIdExiste(id);
+        }
+
         public bool AgregarSucursal(string nombre, string descripcion, int provincia, string direccion)
         {
             int cantFilas = 0;

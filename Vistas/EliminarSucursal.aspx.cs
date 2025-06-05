@@ -26,7 +26,15 @@ namespace Vistas
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
+            int idSucursal = Convert.ToInt32(txt_IdSucursal.Text);
             lbl_Mensaje.Text = string.Empty;
+
+            if (!negocioSucursal.SucursalIdExiste(idSucursal))
+            {
+                lbl_Mensaje.ForeColor = Color.Black;
+                lbl_Mensaje.Text = "No se encontró una sucursal con el ID " + idSucursal;
+                return;
+            }
 
             lblConfirmacionEliminacion.Visible = true;
             lblConfirmacionEliminacion.Enabled = true;
@@ -52,7 +60,7 @@ namespace Vistas
                 else
                 {
                     lbl_Mensaje.ForeColor = Color.Black;
-                    lbl_Mensaje.Text = "No se encontró una sucursal con el ID " + txt_IdSucursal.Text.ToString();
+                    lbl_Mensaje.Text = "Error al eliminar la sucursal";
                 }
 
                 DataTable tablaSucursales = negocioSucursal.GetTabla();
